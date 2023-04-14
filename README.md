@@ -87,7 +87,7 @@ used internally by DeepL, where required.
     	--test		use test language set
     	--help		display this text
       
-When run, deepl will display what it's doing, which language it's working on (or skipping, if already present), and then at the end report
+When run, deepler will display what it's doing, which language it's working on (or skipping, if already present), and then at the end report
 the current usage and quota % from the DeepL account.
 
 We make no great claims for the quality of this code; it's simply a tool that helps us get a job done fast - converting our website into
