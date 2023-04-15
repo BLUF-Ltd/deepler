@@ -73,9 +73,9 @@ Because sometimes we do go back and change things, we've added a few extra optio
 they have been tweaked by a real person. But we can force the tool to rebuild everything from English, or just to append any languages that
 are missing.
 
-The deepl_arrays.php file configures things like the core set of languages (for us, English, German, French, Spanish), an extended set, a smaller
-test set, languages for which we prefer to use the informal option, if avaiable. It also maps between an ISO set of codes and those
-used internally by DeepL, where required.
+The deepl_config.php file configures things like the core set of languages (for us, English, German, French, Spanish), an extended set, a smaller
+test set, languages for which we prefer to use the informal option, if available. It also maps between an ISO set of codes and those
+used internally by DeepL, where required. This makes some codes a little easier for people to remember.
 
     Usage: deepler.php <files>
     All .txt files will be translated from English to core languages
@@ -89,6 +89,16 @@ used internally by DeepL, where required.
       
 When run, deepler will display what it's doing, which language it's working on (or skipping, if already present), and then at the end report
 the current usage and quota % from the DeepL account.
+
+### In this repository
+In the common directory, you'll find deepl_config.php, which sets up the various arrays that define languages supported, default language set
+for our Smarty config files, and so on.
+
+The file deepl.php is our main DeepL code, and provides a general translation function (also used to allow users to translate messages they receive
+on the site), plus functions to work out which languages are used in a config file, and to extract a specific section, if necessary.
+
+Not included is KEYSdeepl.php which is a short include that defines KEY_DEEPL, our DeepL API key. This is stored elsewhere on the server, away
+from anthing managed with source control.
 
 We make no great claims for the quality of this code; it's simply a tool that helps us get a job done fast - converting our website into
 multiple languages, with a fair degree of accuracy, and minimal work.
