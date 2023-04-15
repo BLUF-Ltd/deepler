@@ -44,7 +44,7 @@ like this
     heading       = Bienvenue sur le site de BLUF, le club des hommes en cuir.
   
 So, once we've debugged a page, and created the english version of all the texts - which can include variables set via the Smarty engine -
-all we need to do is to add the extra langauges to the config file, and we have a multilingual version.
+all we need to do is to add the extra languages to the config file, and we have a multilingual version.
 
 In the past we used a team of volunteer translators, and you'll probably get the best results by using real native speakers. But that tends
 to either cost money, or take time. As we now try to ensure that when a feature is added to the site, it's immediately available to users
