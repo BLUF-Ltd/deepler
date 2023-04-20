@@ -3,6 +3,9 @@
 // BLUF 4.5 DeepL translation functions
 // moved from admin translate
 
+// Version 1.6
+// Date: 2023-04-20
+// Add additional check for language codes
 // Version 1.5
 // Date: 2023-04-15
 // Switch to using new configs
@@ -24,7 +27,12 @@ function deepl_translation(string $original, string $to_lang, bool $autodetect =
 
 	if (! in_array($to_lang, DEEPL_LANGUAGES)) {
 		// not using a DeepL code, try the iso country mapping
-		$to_lang = DEEPL_ISO_INPUT[$to_lang] ;
+		if (in_array($to_lang, DEEPL_ISO_INPUT)) {
+			$to_lang = DEEPL_ISO_INPUT[$to_lang] ;
+		} elseif (in_array($to_lang, DEEPL_FROM_LANGUAGE)) {
+			// try our language codes
+			$to_lang = DEEPL_FOM_LANGUAGE[$to_lang] ;
+		}
 	}
 
 	$curl = curl_init();
